@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import {Layout, Menu, MenuProps} from "antd";
-import {Content, Header} from "antd/es/layout/layout";
+import {Content, Footer, Header} from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import {ItemType} from "antd/es/menu/hooks/useItems";
 
@@ -43,13 +43,11 @@ const LayoutDemo = () => {
                 <Header>
                     Header
                 </Header>
-                <Sider>
-                    导航栏
-                    <Menu items={items} onClick={onClick} selectedKeys={[current]}/>
-                </Sider>
-                <Content>
-                    内容
-                </Content>
+                <Layout>
+                    <Sider><Menu items={items} onClick={onClick} selectedKeys={[current]} mode={"vertical"}/></Sider>
+                    <Content>内容</Content>
+                </Layout>
+                <Footer>Footer</Footer>
             </Layout>
 
 
